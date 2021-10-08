@@ -11,6 +11,7 @@ import Profile from './components/Profile.jsx';
 import Postviewonclick from './components/Postviewonclick.jsx';
 import Filteroption from "./components/Filteroption.jsx"
 import Edit from './components/Edit.jsx';
+import Admin from './components/Admin.jsx';
 /*
   READ THESE COMMENTS AS A PART OF STEP TWO
   To manage switching among the different views in this application, 
@@ -83,7 +84,7 @@ class App extends React.Component {
   }
   connect() {
 
-    axios.post('/api/user', this.state)
+    axios.get('/api/user', this.state)
       .then(data => {
         console.log(data)
         if (data.data.username === "admin") {
@@ -94,6 +95,7 @@ class App extends React.Component {
               ghost: false
             }
           })
+          this.changeView("admin")
         }
         if (data.data.username === "ghost") {
           this.setState({
@@ -134,6 +136,9 @@ class App extends React.Component {
     } else if (view === 'signup') {
       return <Signup changeView={this.changeView} handleChange={this.handleChange} />
     }
+    // else if (this.state.username === "Admin"){
+    //   return <Admin  data = {this.state.data}/>
+    // }
     else if (view === "filterop"){
       return <Filteroption data = {this.state.allfiltreddata}/>
     }
