@@ -411,7 +411,10 @@ a{color:inherit;text-decoration:none}
   font-family: 'PT Serif', sans-serif;
   color: #ECF0F1;
   background-color: #00158bb8;
-  width: 100%;
+  width: 26%;
+  position: relative;
+  left: 136px;
+  top: 17px;
 
 }
 #savechange {

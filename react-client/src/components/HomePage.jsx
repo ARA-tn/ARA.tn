@@ -6,6 +6,7 @@ const HomePage = (props) => (
       <br />
      <div className="wyl feed-list-item-title">What are you looking for today,  {props.username}? </div>
      <br />
+     <button onClick={()=>props.change("admin")}>Admin</button>
     
      {/* <img className="img" src={logo2}/> */}
      <ul>

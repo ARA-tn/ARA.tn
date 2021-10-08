@@ -13,6 +13,6 @@ announceRouter.route('/announce/:id')
 
 
 announceRouter.route('/')
-.post(Controller.check)
+.get(Controller.check)
 
 module.exports = announceRouter ;
