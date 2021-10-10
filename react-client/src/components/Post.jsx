@@ -70,36 +70,66 @@ headers:{
 }
   render(){
     
-    return (
-<div className="post">
-    <div className="create">
-  <div className="create-editor">
-    <h2>Create A Post</h2>
-    <form>
-      <input  className="create-input" type="text" onChange = {this.handleChange} name = "title" placeholder="Post Title"></input>
-      <input  className="create-input" type="text" onChange = {this.handleChange} name = "adress" placeholder="Adress"></input>
-      <input  className="create-input" type="text" onChange = {this.handleChange} name = "phoneNumber" placeholder="Phone Number"></input>
-      <select value={this.state.rentorsale} onChange={this.handlethisChange}>
+   return (
+
+<div>
+				<div className="login-wrap">
+	<div className="login-html">
+		<input id="tab-1" type="radio" name="tab" className="sign-in" defaultChecked/><label htmlFor="tab-1" className="tab">Create A Post</label>
+		<input id="tab-2" type="radio" name="tab" className="sign-up"/><label htmlFor="tab-2" className="tab"></label>
+		<div className="login-form">
+			<div className="sign-in-htm">
+
+				<div className="group">
+					<label htmlFor="user" className="label">Post Title</label>
+					<input id="title" type="text" placeholder="Title..." className ='input' name="title" onChange = {this.handleChange}/>
+				</div>
+
+				<div className="group">
+					<label htmlFor="user" className="label">Adress</label>
+					<input id="adress" type="text" placeholder="Adress..." className ='input' name="adress" onChange = {this.handleChange}/>
+				</div>
+
+ 				<div className="group">
+					<label htmlFor="user" className="label">Phone Number</label>
+					<input id="phoneNumber" type="text" placeholder="Phone Number..." className ='input' name="phoneNumber" onChange = {this.handleChange}/>
+				</div>     
+
+        <select value={this.state.rentorsale} onChange={this.handlethisChange}>
         <option value=""></option>
             {[{label : "Rent",value : "rent"},{label : "Sale",value:"sale"}].map((option,k) => (
               <option key = {k} value={option.value}>{option.label}</option>
             ))}
           </select>
-      <input className="create-input" type="number" onChange = {this.handleChange} name = "price"  placeholder="Price"></input>
-      <input className="create-input" type="text" onChange = {this.handleChange} name = "imageUrl" placeholder="Image URL"></input>
-        </form>
-      {/* <form method="POST" action="/upload-image" enctype="multipart/form-data"   > */}
-        <form>
+
+    
+ 				<div className="group">
+					<label htmlFor="user" className="label">Price</label>
+					<input id="price" type="number" placeholder="Price..." className ='input' name="price" onChange = {this.handleChange}/>
+				</div>  
+
         <div>
-  <label htmlFor="file" >Select a file: </label>
-  <input type="file"  id="myfile" name="image"  accept="image/*" multiple={false} onChange={this.sendPic} /></div>
-  </form>
-      <textarea className="create-body-textarea" onChange = {this.handleChange} name = "body" placeholder="Post Body"></textarea>
-      <button className="create-submit-button" onClick = {()=>{this.saveandgo()}} type="submit">Save post</button>
-  
+   <label htmlFor="file" className="label">Select a file: </label>
+  <input type="file"  id="myfile" name="image"  accept="image/*" multiple={false} onChange={this.sendPic} />
   </div>
+  <br />
+
+  <div>
+  <label htmlFor="description" className="label">Description</label>
+  <input className="create-body-textarea" onChange = {this.handleChange} name = "body" placeholder="Description..."/>
+  </div>
+
+				<div className="group">
+					<input type="submit" className="button" value="Publish" onClick = {()=>{this.saveandgo()}}/>
+				</div>
+
+
+
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
-  </div>
     )
   }
 }
