@@ -30,19 +30,53 @@ export default class Edit extends Component {
 
     render() {
         return (
-            <div className="post">
-            <div className="create">
-          <div className="create-editor">
-          <h2>Make Change</h2>
-                Title<input className="create-input" name = "title" onChange = {this.handleChange} type="text" />
-                Adress<input className="create-input" name = "adress" onChange = {this.handleChange} type="text" />
-                Price<input className="create-input" name = "price" onChange = {this.handleChange} type="text" />
-                ImgUrl<input className="create-input" name = "imageUrl" onChange = {this.handleChange} type="text" />
-                Body<input className="create-input" name = "body" onChange = {this.handleChange} type="text" />
-                <button id = "savechange" onClick = {()=>this.put()}>Save Change</button>
-            </div>
-            </div>
-            </div>
+
+<div>
+<div className="login-wrap">
+<div className="login-html">
+<input id="tab-1" type="radio" name="tab" className="sign-in" defaultChecked/><label htmlFor="tab-1" className="tab">Make A Change</label>
+<input id="tab-2" type="radio" name="tab" className="sign-up"/><label htmlFor="tab-2" className="tab"></label>
+<div className="login-form">
+<div className="sign-in-htm">
+
+<div className="group">
+    <label htmlFor="user" className="label">Title</label>
+    <input id="title" type="text" placeholder="Title..." className ='input' name="title"onChange = {this.handleChange}/>
+</div>
+
+<div className="group">
+    <label htmlFor="user" className="label">Adress</label>
+    <input id="adress" type="text" placeholder="Adress..." className ='input' name="adress"onChange = {this.handleChange}/>
+</div>
+
+<div className="group">
+    <label htmlFor="user" className="label">Price</label>
+    <input id="price" type="text" placeholder="Price..." className ='input' name="price"onChange = {this.handleChange}/>
+</div>
+
+<div className="group">
+    <label htmlFor="user" className="label">ImgUrl</label>
+    <input id="ImgUrl" type="text" placeholder="ImgUrl..." className ='input' name="ImgUrl"onChange = {this.handleChange}/>
+</div>
+
+<div>
+  <label htmlFor="description" className="label">Description</label>
+  <input className="create-body-textarea" onChange = {this.handleChange} name = "body" placeholder="Description..."/>
+  </div>
+
+  <div className="group">
+					<input type="submit" className="button" value="Save Change" onClick = {()=>this.put()}/>
+				</div>
+
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
         )
     }
 }
